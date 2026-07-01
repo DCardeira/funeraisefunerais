@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funerais e Funerais | Acompanhamento humano e profissional</title>
+  <meta name="description" content="Landing page moderna e interativa para Funerais e Funerais, com serviços, imagens, depoimentos e contacto direto." />
+  <style>
+    :root {
+      --bg: #eef3ea;
+      --surface: #fcfaf7;
+      --text: #2f241f;
+      --muted: #6f5d53;
+      --primary: #6f7f4d;
+      --primary-dark: #3f4d2f;
+      --accent: #b88b5a;
+      --border: #dfe7d7;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(126, 160, 92, 0.24), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(184, 139, 90, 0.2), transparent 24%),
+        linear-gradient(135deg, #f8f5ef 0%, var(--bg) 100%);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .nature-video {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.28;
+      filter: brightness(0.75) saturate(0.8);
+      pointer-events: none;
+    }
+
+    .page-shell {
+      position: relative;
+      z-index: 1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img {
+      max-width: 100%;
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+    }
+
+    .container { width: min(1140px, calc(100% - 2rem)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 253, 249, 0.82);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(47, 36, 31, 0.04);
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--primary-dark);
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 18px rgba(111, 127, 77, 0.24);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      color: var(--muted);
+      font-weight: 600;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 4rem 0 3rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      margin: 0 0 1rem;
+      color: var(--primary-dark);
+    }
+
+    .hero p { font-size: 1.04rem; color: var(--muted); margin: 0 0 1.3rem; }
+
+    .buttons { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.15rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 10px 28px rgba(122, 75, 58, 0.25); }
+    .btn-secondary { background: var(--surface); border: 1px solid var(--border); color: var(--primary-dark); }
+
+    .hero-visual {
+      position: relative;
+      padding: 1rem;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #fff, #e9efe0);
+      box-shadow: 0 20px 45px rgba(47, 36, 31, 0.08);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 20px;
+    }
+
+    .floating-card {
+      position: absolute;
+      left: -1rem;
+      bottom: 1rem;
+      background: rgba(255, 253, 249, 0.96);
+      padding: 0.9rem 1rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 24px rgba(47,36,31,.08);
+      max-width: 240px;
+    }
+
+    .floating-card strong { display: block; color: var(--primary-dark); }
+    .floating-card span { color: var(--muted); font-size: 0.95rem; }
+
+    .section { padding: 2rem 0 3rem; }
+    .section-title { text-align: center; margin-bottom: 1.2rem; }
+    .section-title h2 { margin: 0 0 0.35rem; color: var(--primary-dark); font-size: 1.8rem; }
+    .section-title p { margin: 0; color: var(--muted); }
+
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.1rem;
+      box-shadow: 0 10px 24px rgba(47,36,31,0.04);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 16px 30px rgba(47,36,31,0.08); }
+    .card h3 { margin: 0.6rem 0 0.25rem; color: var(--primary-dark); }
+    .card p { margin: 0; color: var(--muted); }
+    .icon { width: 46px; height: 46px; display: inline-flex; align-items: center; justify-content: center; border-radius: 14px; background: rgba(199,154,109,0.2); color: var(--primary); font-weight: 800; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .gallery figure {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      position: relative;
+      box-shadow: 0 12px 24px rgba(47,36,31,0.06);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .35s ease;
+    }
+    .gallery figure:hover img { transform: scale(1.06); }
+    .gallery figcaption {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 0.8rem 0.9rem;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,0.66));
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1rem;
+      align-items: center;
+      background: linear-gradient(90deg, rgba(122,75,58,0.07), rgba(199,154,109,0.12));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 1.3rem;
+    }
+
+    .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; }
+    .step { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: .9rem; }
+    .step strong { display: block; margin-bottom: .25rem; color: var(--primary-dark); }
+
+    .testimonial-wrap { position: relative; margin-top: 1rem; }
+    .testimonial {
+      display: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.2rem;
+      box-shadow: 0 10px 24px rgba(47,36,31,0.05);
+    }
+    .testimonial.active { display: block; animation: fadeIn .4s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px);} to { opacity: 1; transform: translateY(0);} }
+    .testimonial blockquote { margin: 0 0 .7rem; font-size: 1.02rem; color: var(--text); }
+    .testimonial strong { color: var(--primary-dark); }
+    .controls { display: flex; justify-content: center; gap: .5rem; margin-top: .8rem; }
+    .dot {
+      width: 10px; height: 10px; border-radius: 999px; border: 0; background: #d8c2ab; cursor: pointer;
+    }
+    .dot.active { background: var(--primary); }
+
+    .faq { display: grid; gap: .7rem; margin-top: 1rem; }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%; border: 0; background: transparent; padding: 1rem; text-align: left; font: inherit; font-weight: 700; color: var(--primary-dark); cursor: pointer;
+    }
+    .faq-answer { display: none; padding: 0 1rem 1rem; color: var(--muted); }
+    .faq-item.open .faq-answer { display: block; }
+
+    .cta {
+      text-align: center;
+      background: var(--primary-dark);
+      color: white;
+      border-radius: 24px;
+      padding: 2rem 1.2rem;
+      margin: 2rem 0 3rem;
+    }
+    .cta h2 { margin: 0 0 .5rem; }
+    .cta p { margin: 0 0 1rem; color: rgba(255,255,255,.86); }
+
+    .floating-btn {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      background: #25d366;
+      color: white;
+      border-radius: 999px;
+      padding: .9rem 1rem;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(37,211,102,.3);
+      z-index: 30;
+    }
+
+    footer { text-align: center; padding: 0 0 2rem; color: var(--muted); font-size: .95rem; }
+
+    @media (max-width: 900px) {
+      .hero, .about { grid-template-columns: 1fr; }
+      .grid, .gallery, .steps { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding-top: 2.2rem; }
+      .buttons { flex-direction: column; }
+      .btn { width: 100%; text-align: center; }
+      .hero-visual img { height: 280px; }
+      .floating-card { position: static; margin-top: .8rem; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <video class="nature-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80">
+    <source src="https://videos.pexels.com/video-files/854982/854982-hd_1920_1080_25fps.mp4" type="video/mp4" />
+  </video>
+
+  <div class="page-shell">
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#">
+          <span class="brand-mark">F&F</span>
+          <span>Funerais e Funerais</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#servicos">Serviços</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Acompanhamento humano, profissional e respeitoso.</h1>
+        <p>Na Funerais e Funerais, cada detalhe é tratado com cuidado, transparência e empatia para que a sua família se sinta apoiada em cada passo.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#contacto">Fale connosco</a>
+          <a class="btn btn-secondary" href="#servicos">Descubra os serviços</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80" alt="Equipe a apoiar uma família em um momento delicado" />
+        <div class="floating-card">
+          <strong>Atendimento 24/7</strong>
+          <span>Planeamento, acompanhamento e apoio emocional.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="section">
+      <div class="section-title">
+        <h2>Serviços pensados para si</h2>
+        <p>Uma resposta completa e cuidada em cada detalhe.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="icon">01</div>
+          <h3>Acolhimento</h3>
+          <p>Orientação inicial clara e humana, com atenção às necessidades da família.</p>
+        </article>
+        <article class="card">
+          <div class="icon">02</div>
+          <h3>Velórios e cerimónias</h3>
+          <p>Organização de espaços, flores, música e todos os elementos da homenagem.</p>
+        </article>
+        <article class="card">
+          <div class="icon">03</div>
+          <h3>Logística completa</h3>
+          <p>Transporte, documentação e apoio operacional com rigor e sensibilidade.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="galeria" class="section">
+      <div class="section-title">
+        <h2>Momentos de cuidado e respeito</h2>
+        <p>Uma abordagem moderna, acolhedora e preparada para cada situação.</p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80" alt="Espaço de cerimónia elegante" loading="lazy" />
+          <figcaption>Espaços acolhedores</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80" alt="Equipa a dar apoio" loading="lazy" />
+          <figcaption>Apoio próximo</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80" alt="Reunião familiar com acompanhamento profissional" loading="lazy" />
+          <figcaption>Atendimento personalizado</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="about">
+        <div>
+          <h3>Porque escolher a Funerais e Funerais</h3>
+          <p>Somos uma equipa dedicada a oferecer um atendimento humano, rigoroso e personalizado. Cada caso é tratado com respeito, calma e atenção aos detalhes que mais importam.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><strong>1. Escuta</strong>Compreendemos as necessidades de cada família.</div>
+          <div class="step"><strong>2. Planeamento</strong>Organizamos cada etapa com clareza e serenidade.</div>
+          <div class="step"><strong>3. Apoio</strong>Acompanhamos até ao fim da cerimónia com presença.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>O que dizem as famílias</h2>
+        <p>Feedback real de quem recebeu apoio verdadeiro.</p>
+      </div>
+      <div class="testimonial-wrap">
+        <div class="testimonial active">
+          <blockquote>“Sentimo-nos acompanhados desde o primeiro momento. Tudo foi tratado com muito respeito e carinho.”</blockquote>
+          <strong>Maria e família</strong>
+        </div>
+        <div class="testimonial">
+          <blockquote>“Profissionalismo, calma e dedicação. A organização foi impecável e muito humana.”</blockquote>
+          <strong>João P.</strong>
+        </div>
+        <div class="testimonial">
+          <blockquote>“A equipa mostrou-se presente em todos os detalhes, o que tornou tudo mais simples para nós.”</blockquote>
+          <strong>Carla M.</strong>
+        </div>
+        <div class="controls" aria-label="Navegação de testemunhos">
+          <button class="dot active" data-index="0" aria-label="Testemunho 1"></button>
+          <button class="dot" data-index="1" aria-label="Testemunho 2"></button>
+          <button class="dot" data-index="2" aria-label="Testemunho 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Perguntas frequentes</h2>
+        <p>Respostas claras para quem procura orientação.</p>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-question">Como funciona o primeiro contacto?</button>
+          <div class="faq-answer">O primeiro contacto pode ser feito por telefone ou mensagem e será tratado com calma, empatia e clareza.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Oferecem apoio em situações urgentes?</button>
+          <div class="faq-answer">Sim. Estamos disponíveis para apoiar em momentos de necessidade imediata, com atendimento preparado e sensível.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Podem ajudar na organização completa?</button>
+          <div class="faq-answer">Sim, organizamos os vários detalhes da cerimónia, transporte e apoio logístico com rigor e cuidado.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacto">
+      <h2>Precisa de ajuda agora?</h2>
+      <p>Estamos disponíveis para lhe prestar apoio imediato e responder a todas as suas dúvidas.</p>
+      <a class="btn btn-primary" href="tel:+351000000000">Ligue agora</a>
+    </section>
+  </main>
+
+    <a class="floating-btn" href="https://wa.me/351000000000" target="_blank" rel="noopener">WhatsApp</a>
+
+    <footer>
+      <div class="container">Funerais e Funerais © 2026 · Acompanhamento respeitoso em cada momento.</div>
+    </footer>
+  </div>
+
+  <script>
+    const testimonials = Array.from(document.querySelectorAll('.testimonial'));
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    let current = 0;
+
+    function showTestimonial(index) {
+      testimonials.forEach((item, i) => item.classList.toggle('active', i === index));
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+      current = index;
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        showTestimonial(Number(dot.dataset.index));
+      });
+    });
+
+    setInterval(() => {
+      const next = (current + 1) % testimonials.length;
+      showTestimonial(next);
+    }, 5000);
+
+    document.querySelectorAll('.faq-item').forEach((item) => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach((entry) => entry.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>

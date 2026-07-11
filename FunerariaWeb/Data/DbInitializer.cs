@@ -12,7 +12,14 @@ namespace FunerariaWeb.Data
         public static async Task SeedAsync(IServiceProvider services)
         {
             var context = services.GetRequiredService<ApplicationDbContext>();
-            await context.Database.MigrateAsync();
+            if (context.Database.ProviderName != null && context.Database.ProviderName.Contains("Sqlite", StringComparison.OrdinalIgnoreCase))
+            {
+                await context.Database.EnsureCreatedAsync();
+            }
+            else
+            {
+                await context.Database.MigrateAsync();
+            }
 
             var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
             foreach (var role in new[] { Roles.Administrador, Roles.Cliente })

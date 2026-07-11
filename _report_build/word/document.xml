@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:body>
+    <w:p><w:r><w:t>Licenciatura em Engenharia Informática</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Desenvolvimento Web</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Relatório</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Funerais e Funerais</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Autores</w:t></w:r></w:p>
+    <w:p><w:r><w:t>24877 — Diogo Alexandre Mateus Cardeira</w:t></w:r></w:p>
+    <w:p><w:r><w:t>25968 — Tomás Filipe Rodrigues Ovídio Seródio</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Nome aplicação: Funerais e Funerais</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Principais funcionalidades</w:t></w:r></w:p>
+    <w:p><w:r><w:t>• Gestão de clientes e contactos familiares</w:t></w:r></w:p>
+    <w:p><w:r><w:t>• Gestão de serviços funerários, cerimónias e componentes associados</w:t></w:r></w:p>
+    <w:p><w:r><w:t>• Autenticação e controlo de acesso com ASP.NET Identity e papéis de Administrador/Cliente</w:t></w:r></w:p>
+    <w:p><w:r><w:t>• API REST para gestão de clientes, serviços e cerimónias</w:t></w:r></w:p>
+    <w:p><w:r><w:t>• Notificações em tempo real com SignalR para o painel administrativo</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Diagrama ER da base de dados</w:t></w:r></w:p>
+    <w:p><w:r><w:t>O modelo de dados inclui as entidades Cliente, Serviço, Cerimónia, CerimóniaServiço, ApplicationUser e as tabelas de Identity. A relação 1-N é entre Cliente e Cerimónia, enquanto a relação M-N é implementada entre Cerimónia e Serviço através da tabela de junção CerimóniaServiço.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Links</w:t></w:r></w:p>
+    <w:p><w:r><w:t>GitHub: https://github.com/DCardeira/funeraisefunerais/</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Aplicação instalada em servidor web: https://&lt;nome-app&gt;.azurewebsites.net</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Roles (ou outras formas de segmentar os utilizadores)</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Administrador — gere clientes, serviços, cerimónias e acede a todas as operações administrativas.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Cliente — consulta e acompanha as suas cerimónias e dados associados à conta.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Utilizadores pré-carregados na app</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Administrador: admin@funeraria.pt / Admin123!</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Cliente: cliente@funeraria.pt / Cliente123!</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Componente Acesso a Base de Dados</w:t></w:r></w:p>
+    <w:p><w:r><w:t>A aplicação utiliza ASP.NET Core com Entity Framework Core e SQL Server, através do ApplicationDbContext. As migrações são aplicadas automaticamente no arranque pela classe DbInitializer, que também cria os papéis e os utilizadores de teste.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Relacionamento 1-N</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Um Cliente pode ter várias Cerimónias associadas.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Relacionamento M-N</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Uma Cerimónia pode incluir vários Serviços, e um Serviço pode aparecer em várias Cerimónias, através da entidade CerimóniaServiço.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>API</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Endpoints implementados para Clientes, Serviços e Cerimónias com operações GET, POST, PUT e DELETE em Controllers de API REST.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>SignalR</w:t></w:r></w:p>
+    <w:p><w:r><w:t>O projeto inclui um hub de notificações para informar o painel administrativo em tempo real.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Funcionalidades implementadas</w:t></w:r></w:p>
+    <w:p><w:r><w:t>• CRUD de clientes, serviços e cerimónias em Razor Pages</w:t></w:r></w:p>
+    <w:p><w:r><w:t>• Login/logout com ASP.NET Identity</w:t></w:r></w:p>
+    <w:p><w:r><w:t>• Publicação preparada para Azure App Service com SQL Server</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Instruções para a execução da aplicação</w:t></w:r></w:p>
+    <w:p><w:r><w:t>1. Abrir a solução em Visual Studio ou VS Code.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>2. Restaurar dependências com dotnet restore.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>3. Aplicar as migrações e executar a aplicação.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>4. Aceder à aplicação e validar as credenciais de teste indicadas acima.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Observações Finais</w:t></w:r></w:p>
+    <w:p><w:r><w:t>O projeto responde ao enunciado de Desenvolvimento Web, combinando Razor Pages, MVC Controllers, Entity Framework Core, Identity, SignalR e uma estrutura de dados coerente para uma funerária.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Compromisso</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Cada autor declara, pela sua honra, que este trabalho é da sua total autoria e que as adaptações efetuadas, com base no trabalho de outros autores, estão devidamente documentadas no código.</w:t></w:r></w:p>
+    <w:sectPr>
+      <w:pgSz w:w="12240" w:h="15840"/>
+      <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/>
+    </w:sectPr>
+  </w:body>
+</w:document>

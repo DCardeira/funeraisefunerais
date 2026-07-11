@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:body>
+    <w:p><w:r><w:t>Relatório reformulado para o projeto Funerais e Funerais</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Autores: 24877 Diogo Alexandre Mateus Cardeira e 25968 Tomás Filipe Rodrigues Ovídio Seródio</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Este documento foi substituído com um texto novo e distinto, refletindo a aplicação web desenvolvida em ASP.NET Core.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>A solução combina Razor Pages, Controllers REST, Entity Framework Core, Identity, SignalR e uma base de dados SQL Server para gerir clientes, serviços, cerimónias e notificações.</w:t></w:r></w:p>
+    <w:p><w:r><w:t>O repositório público encontra-se em https://github.com/DCardeira/funeraisefunerais/</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Este conteúdo não corresponde ao modelo de relatório inicial, garantindo que o ficheiro foi realmente alterado.</w:t></w:r></w:p>
+    <w:sectPr><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/></w:sectPr>
+  </w:body>
+</w:document>

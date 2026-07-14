@@ -26,7 +26,7 @@
                 {
                     <span>Olá, @User.Identity?.Name</span>
                     <form method="post" asp-page="/Conta/Sair" style="display:inline">
-                        @Html.AntiForgeryToken()
+                    
                         <button type="submit" class="btn-link">Sair</button>
                     </form>
                 }

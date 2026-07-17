@@ -1,0 +1,24 @@
+@page "{id:int}"
+@model FunerariaWeb.Pages.Clientes.ApagarModel
+@{ ViewData["Title"] = "Apagar cliente"; }
+
+<div class="card" style="max-width:520px;">
+    <h1>Apagar cliente</h1>
+    @if (Model.TemCerimoniasAssociadas)
+    {
+        <div class="alert alert-erro">
+            Este cliente tem cerimónias associadas e não pode ser apagado.
+            Apague ou reatribua primeiro essas cerimónias.
+        </div>
+        <a class="btn-secundario" href="/Clientes">Voltar</a>
+    }
+    else
+    {
+        <p>Tem a certeza que pretende apagar <strong>@Model.Cliente.Nome</strong>? Esta ação não pode ser revertida.</p>
+        <form method="post">
+            <input type="hidden" asp-for="Cliente.Id" />
+            <button type="submit" class="btn-perigo">Sim, apagar</button>
+            <a class="btn-secundario" href="/Clientes">Cancelar</a>
+        </form>
+    }
+</div>

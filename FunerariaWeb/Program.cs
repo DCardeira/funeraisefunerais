@@ -40,7 +40,7 @@ var app = builder.Build();
 // --- Pipeline HTTP ---
 if (app.Environment.IsDevelopment())
 {
-    app.UseMigrationsEndPoint();
+    app.UseDeveloperExceptionPage();
 }
 else
 {

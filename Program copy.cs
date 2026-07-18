@@ -1,40 +1,11 @@
-<<<<<<< HEAD
-using funeraisefunerais.Data;
-=======
 using FunerariaWeb.Data;
 using FunerariaWeb.Hubs;
 using FunerariaWeb.Models;
 using Microsoft.AspNetCore.Identity;
->>>>>>> cardeira
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-<<<<<<< HEAD
-builder.Services.AddRazorPages();
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=contacts.db"));
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
-
-app.UseHttpsRedirection();
-
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapStaticAssets();
-app.MapRazorPages()
-   .WithStaticAssets();
-=======
 // --- Base de dados (a connection string vem do appsettings.json / User Secrets / Azure) ---
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
     ?? throw new InvalidOperationException("Connection string 'DefaultConnection' não encontrada.");
@@ -95,6 +66,5 @@ using (var scope = app.Services.CreateScope())
 {
     await DbInitializer.SeedAsync(scope.ServiceProvider);
 }
->>>>>>> cardeira
 
 app.Run();

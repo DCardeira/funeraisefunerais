@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,6 +51,65 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
+=======
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Funerais e Funerais</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a class="brand" href="/">
+                <span class="brand-mark">F&amp;F</span>
+                <span>Funerais e Funerais</span>
+            </a>
+            <nav class="nav-links">
+                <a href="/">Início</a>
+                <a href="/Clientes">Clientes</a>
+                <a href="/Servicos">Serviços</a>
+                <a href="/Cerimonias">Cerimónias</a>
+                <a href="/Sobre">Sobre o projeto</a>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <span>Olá, @User.Identity?.Name</span>
+                    <form method="post" action="/Conta/Sair" style="display:inline">
+                        <button type="submit" class="btn-link">Sair</button>
+                    </form>
+                }
+                else
+                {
+                    <a href="/Conta/Entrar">Entrar</a>
+                }
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 2rem 0;">
+        @if (TempData["Mensagem"] != null)
+        {
+            <div class="alert alert-sucesso">@TempData["Mensagem"]</div>
+        }
+        @RenderBody()
+    </main>
+
+    <footer>
+        <div class="container">Funerais e Funerais &copy; 2026 &middot; Projeto académico &mdash; Desenvolvimento Web</div>
+    </footer>
+
+    @if (User.IsInRole(Roles.Administrador))
+    {
+        <div id="notificacoes-caixa"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+        <script src="~/js/notificacoes.js"></script>
+    }
+>>>>>>> cardeira
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -1,0 +1,34 @@
+@page
+@model FunerariaWeb.Pages.Servicos.IndexModel
+@{ ViewData["Title"] = "Serviços"; }
+
+<div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+        <h1>Serviços</h1>
+        @if (User.IsInRole(Roles.Administrador))
+        {
+            <a class="btn-primario" href="/Servicos/Criar">+ Novo serviço</a>
+        }
+    </div>
+
+    <table>
+        <thead><tr><th>Nome</th><th>Categoria</th><th>Preço base</th>@if (User.IsInRole(Roles.Administrador)){<th></th>}</tr></thead>
+        <tbody>
+        @foreach (var s in Model.Servicos)
+        {
+            <tr>
+                <td>@s.Nome<br /><small class="text-muted">@s.Descricao</small></td>
+                <td>@s.Categoria</td>
+                <td>@s.PrecoBase.ToString("C")</td>
+                @if (User.IsInRole(Roles.Administrador))
+                {
+                    <td>
+                        <a href="/Servicos/Editar/@s.Id">Editar</a> ·
+                        <a href="/Servicos/Apagar/@s.Id" style="color:var(--danger);">Apagar</a>
+                    </td>
+                }
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
